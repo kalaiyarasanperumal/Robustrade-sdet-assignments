@@ -1,31 +1,47 @@
-import { APIRequestContext, APIResponse } from "@playwright/test";
+import {
+  APIRequestContext,
+  APIResponse
+} from "@playwright/test";
 
 export class ApiClient {
-  constructor(private readonly request: APIRequestContext) {}
+  constructor(
+    private readonly request: APIRequestContext
+  ) {}
 
   async get(endpoint: string): Promise<APIResponse> {
-    return await this.request.get(endpoint);
+    return this.request.get(endpoint);
   }
 
-  async post(endpoint: string, payload: unknown): Promise<APIResponse> {
-    return await this.request.post(endpoint, {
+  async post(
+    endpoint: string,
+    payload: unknown,
+    headers?: Record<string, string>
+  ): Promise<APIResponse> {
+    return this.request.post(endpoint, {
       data: payload,
+      headers
     });
   }
 
-  async put(endpoint: string, payload: unknown): Promise<APIResponse> {
-    return await this.request.put(endpoint, {
-      data: payload,
+  async put(
+    endpoint: string,
+    payload: unknown
+  ): Promise<APIResponse> {
+    return this.request.put(endpoint, {
+      data: payload
     });
   }
 
-  async patch(endpoint: string, payload: unknown): Promise<APIResponse> {
-    return await this.request.patch(endpoint, {
-      data: payload,
+  async patch(
+    endpoint: string,
+    payload: unknown
+  ): Promise<APIResponse> {
+    return this.request.patch(endpoint, {
+      data: payload
     });
   }
 
   async delete(endpoint: string): Promise<APIResponse> {
-    return await this.request.delete(endpoint);
+    return this.request.delete(endpoint);
   }
 }

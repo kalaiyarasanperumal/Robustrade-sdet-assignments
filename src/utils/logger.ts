@@ -17,5 +17,5 @@ export const logger = {
 
   error(message: string): void {
     log("ERROR", message);
-  },
+  }
 };

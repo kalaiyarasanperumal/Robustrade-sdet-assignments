@@ -1,12 +1,15 @@
 {
-  "name": "transactional-system-api-tests",
+  "name": "robustrade-sdet-assignment",
   "version": "1.0.0",
   "private": true,
-  "description": "End-to-end API and database validation using Playwright and PostgreSQL",
+  "description": "API and database automation testing for transactional workflows",
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
-    "test:report": "playwright show-report",
+    "test:api": "playwright test tests/api",
+    "test:db": "playwright test tests/database",
+    "test:workflow": "playwright test tests/workflows",
+    "test:report": "sh scripts/show-report.sh",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

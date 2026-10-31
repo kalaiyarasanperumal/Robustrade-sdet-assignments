@@ -11,11 +11,10 @@ if (!apiBaseUrl) {
 
 export default defineConfig({
   testDir: "./tests",
-
-  timeout: 30_000,
+  timeout: 30000,
 
   expect: {
-    timeout: 5_000,
+    timeout: 5000
   },
 
   fullyParallel: false,
@@ -24,19 +23,17 @@ export default defineConfig({
 
   reporter: [
     ["list"],
-    [
-      "html",
-      {
-        outputFolder: "playwright-report",
-        open: "never",
-      },
-    ],
+    ["html", {
+      outputFolder: "playwright-report",
+      open: "never"
+    }]
   ],
 
   use: {
     baseURL: apiBaseUrl,
     extraHTTPHeaders: {
-      Accept: "application/json",
+      Accept: "application/json"
     },
-  },
+    trace: "retain-on-failure"
+  }
 });
