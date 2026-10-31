@@ -15,3 +15,10 @@ const result = await executeQuery(
 
 
  -->
+
+npx playwright test tests/api/api-client.spec.ts
+
+kill %1
+npm run test:report
+
+npx playwright show-report --port 9324

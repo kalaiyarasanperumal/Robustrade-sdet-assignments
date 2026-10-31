@@ -1,4 +1,3 @@
-
 import { defineConfig } from "@playwright/test";
 import dotenv from "dotenv";
 
@@ -16,7 +15,7 @@ export default defineConfig({
   timeout: 30_000,
 
   expect: {
-    timeout: 5_000
+    timeout: 5_000,
   },
 
   fullyParallel: false,
@@ -29,15 +28,15 @@ export default defineConfig({
       "html",
       {
         outputFolder: "playwright-report",
-        open: "never"
-      }
-    ]
+        open: "never",
+      },
+    ],
   ],
 
   use: {
     baseURL: apiBaseUrl,
     extraHTTPHeaders: {
-      Accept: "application/json"
-    }
-  }
+      Accept: "application/json",
+    },
+  },
 });

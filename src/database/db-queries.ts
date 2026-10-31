@@ -1,14 +1,10 @@
-
-import {
-  QueryResult,
-  QueryResultRow
-} from "pg";
+import { QueryResult, QueryResultRow } from "pg";
 
 import { getDbPool } from "./db-client";
 
 export async function executeQuery<T extends QueryResultRow>(
   sql: string,
-  values: unknown[] = []
+  values: unknown[] = [],
 ): Promise<QueryResult<T>> {
   try {
     const result = await getDbPool().query<T>(sql, values);

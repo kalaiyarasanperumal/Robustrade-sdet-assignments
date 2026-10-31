@@ -1,11 +1,8 @@
-
 function getRequiredEnv(name: string): string {
   const value = process.env[name];
 
   if (!value || value.trim() === "") {
-    throw new Error(
-      `Missing required environment variable: ${name}`
-    );
+    throw new Error(`Missing required environment variable: ${name}`);
   }
 
   return value;
@@ -23,10 +20,10 @@ export const env = {
     port: Number(getOptionalEnv("DB_PORT", "5432")),
     name: getRequiredEnv("DB_NAME"),
     user: getRequiredEnv("DB_USER"),
-    password: getRequiredEnv("DB_PASSWORD")
+    password: getRequiredEnv("DB_PASSWORD"),
   },
 
-  testEnvironment: getOptionalEnv("TEST_ENV", "local")
+  testEnvironment: getOptionalEnv("TEST_ENV", "local"),
 };
 
 if (

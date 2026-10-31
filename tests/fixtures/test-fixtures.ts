@@ -1,4 +1,3 @@
-
 import { test as base } from "@playwright/test";
 import { Pool } from "pg";
 
@@ -25,7 +24,7 @@ export const test = base.extend<TestFixtures>({
     } finally {
       await closeDbConnection();
     }
-  }
+  },
 });
 
 export { expect } from "@playwright/test";

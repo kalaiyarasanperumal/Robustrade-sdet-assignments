@@ -1,4 +1,3 @@
-
 import { Pool } from "pg";
 import { env } from "../config/env";
 
@@ -17,7 +16,7 @@ export function getDbPool(): Pool {
     password: env.database.password,
     max: 5,
     connectionTimeoutMillis: 5000,
-    idleTimeoutMillis: 10000
+    idleTimeoutMillis: 10000,
   });
 
   return pool;
