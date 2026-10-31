@@ -1,7 +1,4 @@
-import {
-  QueryResult,
-  QueryResultRow
-} from "pg";
+import { QueryResult, QueryResultRow } from "pg";
 
 import { getDbPool } from "./db-client";
 

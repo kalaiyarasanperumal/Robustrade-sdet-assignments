@@ -6,7 +6,7 @@ test.describe("OrangeHRM Login Page", () => {
     const apiClient = new ApiClient(request);
 
     const response = await apiClient.get(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     );
 
     expect(response.status()).toBe(200);

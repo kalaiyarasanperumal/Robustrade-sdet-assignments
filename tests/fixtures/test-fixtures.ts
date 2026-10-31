@@ -1,14 +1,8 @@
-import {
-  test as base,
-  expect
-} from "@playwright/test";
+import { test as base, expect } from "@playwright/test";
 
 import { Pool } from "pg";
 import { ApiClient } from "../../src/clients/api-client";
-import {
-  getDbPool,
-  closeDbConnection
-} from "../../src/database/db-client";
+import { getDbPool, closeDbConnection } from "../../src/database/db-client";
 
 type TestFixtures = {
   apiClient: ApiClient;

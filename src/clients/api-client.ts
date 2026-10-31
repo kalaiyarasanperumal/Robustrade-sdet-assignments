@@ -1,12 +1,7 @@
-import {
-  APIRequestContext,
-  APIResponse
-} from "@playwright/test";
+import { APIRequestContext, APIResponse } from "@playwright/test";
 
 export class ApiClient {
-  constructor(
-    private readonly request: APIRequestContext
-  ) {}
+  constructor(private readonly request: APIRequestContext) {}
 
   async get(endpoint: string): Promise<APIResponse> {
     return this.request.get(endpoint);
@@ -23,19 +18,13 @@ export class ApiClient {
     });
   }
 
-  async put(
-    endpoint: string,
-    payload: unknown
-  ): Promise<APIResponse> {
+  async put(endpoint: string, payload: unknown): Promise<APIResponse> {
     return this.request.put(endpoint, {
       data: payload
     });
   }
 
-  async patch(
-    endpoint: string,
-    payload: unknown
-  ): Promise<APIResponse> {
+  async patch(endpoint: string, payload: unknown): Promise<APIResponse> {
     return this.request.patch(endpoint, {
       data: payload
     });
